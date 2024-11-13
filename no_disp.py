@@ -70,10 +70,10 @@ def goforward():
         dist = base.distance()
         if dist >= 1600: 
             run = False
-        if sensor.reflection() > 15:
+        if sensor.reflection() > 30:
             turn = turn - 4
             ev3.light.on(Color.ORANGE)
-        elif sensor.reflection() < 5: 
+        elif sensor.reflection() < 20: 
             turn = turn + 2
             ev3.light.on(Color.ORANGE)
         else:
