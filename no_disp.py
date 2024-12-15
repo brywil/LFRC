@@ -85,19 +85,19 @@ def goforward():
     open_claw()
 
 def reverse():
-    gyro.reset_angle(0)
     run = True
     base.reset()
     base.settings(255, 255) # here i am MEOW
     while(run):
         turn=gyro.angle()
-        base.drive(-200,-turn)
+        base.drive(-200,-turn-5)
         if base.distance() <= -1600:
             run=False
         wait(50)
     base.stop()
 
 def auto():
+    gyro.reset_angle(0)
     goforward() 
     # after goforward claw opens
     reverse()
